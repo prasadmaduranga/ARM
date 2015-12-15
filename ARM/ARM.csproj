@@ -58,6 +58,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.DataVisualization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -76,6 +77,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Customer\PaymentHistory.aspx" />
+    <Content Include="Customer\ChangePassword.aspx" />
+    <Content Include="Images\kduf.png" />
+    <Content Include="Images\klogo.png" />
+    <Content Include="Images\logo6.png" />
+    <Content Include="Images\shiham.png" />
     <Content Include="packages.config" />
     <Content Include="bootstrap-3.3.5-dist\css\bootstrap-theme.css.map" />
     <Content Include="bootstrap-3.3.5-dist\css\bootstrap.css.map" />
@@ -136,6 +143,9 @@
     <Content Include="Customer\Home.aspx" />
     <Content Include="Customer\ViewProfile.aspx" />
     <Content Include="Customer\EditProfile.aspx" />
+    <Content Include="Customer\CheckBill.aspx" />
+    <Content Include="Customer\ConsumptionHistory.aspx" />
+    <Content Include="Customer\PayOnine.aspx" />
     <Content Include="Images\128-215.jpg" />
     <Content Include="Images\adiesha.png" />
     <Content Include="Images\amanda.png" />
@@ -297,6 +307,41 @@
     <Compile Include="Customer\EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer\CheckBill.aspx.cs">
+      <DependentUpon>CheckBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\CheckBill.aspx.designer.cs">
+      <DependentUpon>CheckBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ConsumptionHistory.aspx.cs">
+      <DependentUpon>ConsumptionHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\ConsumptionHistory.aspx.designer.cs">
+      <DependentUpon>ConsumptionHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\PayOnine.aspx.cs">
+      <DependentUpon>PayOnine.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\PayOnine.aspx.designer.cs">
+      <DependentUpon>PayOnine.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\PaymentHistory.aspx.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\PaymentHistory.aspx.designer.cs">
+      <DependentUpon>PaymentHistory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DBHnadler.cs" />
     <Compile Include="getCustomerInfo_Result.cs">
       <DependentUpon>ARMDataModel.tt</DependentUpon>
@@ -314,6 +359,12 @@
       <DependentUpon>ARMDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="spCheckBill_Result.cs">
+      <DependentUpon>ARMDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spConsumptionHistory_Result.cs">
+      <DependentUpon>ARMDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="staffMember.cs">
       <DependentUpon>ARMDataModel.tt</DependentUpon>
     </Compile>

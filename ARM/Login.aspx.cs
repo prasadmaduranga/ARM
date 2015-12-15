@@ -23,7 +23,6 @@ namespace ARM
             if (!IsPostBack)
             {
                 MultiView1.ActiveViewIndex = 0;
-                // Page.Form.Attributes.Add("enctype", "multipart/form-data");}
 
 
 
@@ -64,7 +63,7 @@ namespace ARM
                 Session["imageURL"] = obj.imageURL;
 
 
-                Response.Redirect("~/Customer/CustomerIndex.aspx");
+                Response.Redirect("~/Customer/Home.aspx");
             }
             else {
                 ClientScript.RegisterStartupScript(GetType(), "hwaa", "alert('Either username or password incorrect');", true);
@@ -125,7 +124,7 @@ namespace ARM
 
 
 
-            string imageURL = "~/Imahges/Defualt.png";
+            string imageURL = "~/Images/Defualt.png";
             if (Page.IsValid)
             {
                 dbcontext.createUser(TextBox9.Text, TextBox6.Text, TextBox13.Text, TextBox5.Text, TextBox3.Text, TextBox10.Text, hash, TextBox4.Text,
@@ -142,7 +141,8 @@ namespace ARM
                 Session["imageURL"] = obj.imageURL;
 
 
-                Response.Redirect("~/Customer/CustomerIndex.aspx");
+                Response.Redirect("~/Customer/Home.aspx");
+
             }
             else {
                 ClientScript.RegisterStartupScript(GetType(), "hwaa", "alert('Invalid data');", true);

@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Accounts">
       <EntityTypeMapping TypeName="ARMModel.Account">
         <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="LastMonthDue" ColumnName="LastMonthDue" />
           <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
           <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="category" ColumnName="category" />
@@ -103,5 +104,35 @@
     <FunctionImportMapping FunctionImportName="changePassword" FunctionName="ARMModel.Store.changePassword" />
     <FunctionImportMapping FunctionImportName="createUser" FunctionName="ARMModel.Store.createUser" />
     <FunctionImportMapping FunctionImportName="editCustomer" FunctionName="ARMModel.Store.editCustomer" />
+    <FunctionImportMapping FunctionImportName="spCheckBill" FunctionName="ARMModel.Store.spCheckBill">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ARMModel.spCheckBill_Result">
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="VATRegNo" ColumnName="VATRegNo" />
+          <ScalarProperty Name="LastMonthDue" ColumnName="LastMonthDue" />
+          <ScalarProperty Name="unitsConsumed" ColumnName="unitsConsumed" />
+          <ScalarProperty Name="domesticCatPrice" ColumnName="domesticCatPrice" />
+          <ScalarProperty Name="lastReading" ColumnName="lastReading" />
+          <ScalarProperty Name="currentMonthReading" ColumnName="currentMonthReading" />
+          <ScalarProperty Name="totalDue" ColumnName="totalDue" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spConsumptionHistory" FunctionName="ARMModel.Store.spConsumptionHistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ARMModel.spConsumptionHistory_Result">
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="chartX" ColumnName="chartX" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spInsertPaymentNew" FunctionName="ARMModel.Store.spInsertPaymentNew" />
+    <FunctionImportMapping FunctionImportName="spUpdatePassword" FunctionName="ARMModel.Store.spUpdatePassword" />
   </EntityContainerMapping>
 </Mapping>

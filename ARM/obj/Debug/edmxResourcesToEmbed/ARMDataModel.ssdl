@@ -10,6 +10,7 @@
     <Property Name="VATRegNo" Type="nvarchar" MaxLength="40" />
     <Property Name="lastReading" Type="int" />
     <Property Name="currentMonthReading" Type="int" />
+    <Property Name="LastMonthDue" Type="float" />
   </EntityType>
   <EntityType Name="Charges">
     <Key>
@@ -149,6 +150,24 @@
   </Function>
   <Function Name="getCustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="userName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spCheckBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spConsumptionHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertPaymentNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="acNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="amount" Type="float" Mode="In" />
+    <Parameter Name="bank" Type="nvarchar" Mode="In" />
+    <Parameter Name="creditCardNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="expiryDate" Type="date" Mode="In" />
+    <Parameter Name="code" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="validateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="userName" Type="nvarchar" Mode="In" />

@@ -173,5 +173,65 @@ namespace ARM
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editCustomer", userNameParameter, nameParameter, addressParameter, homeTelParameter, mobileParameter, nICParameter, emailParameter, tarrifCategoryParameter, regionParameter);
         }
+    
+        public virtual ObjectResult<spCheckBill_Result> spCheckBill(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spCheckBill_Result>("spCheckBill", userNameParameter);
+        }
+    
+        public virtual ObjectResult<spConsumptionHistory_Result> spConsumptionHistory(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spConsumptionHistory_Result>("spConsumptionHistory", userNameParameter);
+        }
+    
+        public virtual int spInsertPaymentNew(string acNumber, Nullable<double> amount, string bank, string creditCardNo, Nullable<System.DateTime> expiryDate, string code)
+        {
+            var acNumberParameter = acNumber != null ?
+                new ObjectParameter("acNumber", acNumber) :
+                new ObjectParameter("acNumber", typeof(string));
+    
+            var amountParameter = amount.HasValue ?
+                new ObjectParameter("amount", amount) :
+                new ObjectParameter("amount", typeof(double));
+    
+            var bankParameter = bank != null ?
+                new ObjectParameter("bank", bank) :
+                new ObjectParameter("bank", typeof(string));
+    
+            var creditCardNoParameter = creditCardNo != null ?
+                new ObjectParameter("creditCardNo", creditCardNo) :
+                new ObjectParameter("creditCardNo", typeof(string));
+    
+            var expiryDateParameter = expiryDate.HasValue ?
+                new ObjectParameter("expiryDate", expiryDate) :
+                new ObjectParameter("expiryDate", typeof(System.DateTime));
+    
+            var codeParameter = code != null ?
+                new ObjectParameter("code", code) :
+                new ObjectParameter("code", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spInsertPaymentNew", acNumberParameter, amountParameter, bankParameter, creditCardNoParameter, expiryDateParameter, codeParameter);
+        }
+    
+        public virtual int spUpdatePassword(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spUpdatePassword", userNameParameter, passwordParameter);
+        }
     }
 }

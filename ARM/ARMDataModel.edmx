@@ -15,6 +15,7 @@
           <Property Name="VATRegNo" Type="nvarchar" MaxLength="40" />
           <Property Name="lastReading" Type="int" />
           <Property Name="currentMonthReading" Type="int" />
+          <Property Name="LastMonthDue" Type="float" />
         </EntityType>
         <EntityType Name="Charges">
           <Key>
@@ -155,6 +156,24 @@
         <Function Name="getCustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userName" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="spCheckBill" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spConsumptionHistory" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spInsertPaymentNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="acNumber" Type="nvarchar" Mode="In" />
+          <Parameter Name="amount" Type="float" Mode="In" />
+          <Parameter Name="bank" Type="nvarchar" Mode="In" />
+          <Parameter Name="creditCardNo" Type="nvarchar" Mode="In" />
+          <Parameter Name="expiryDate" Type="date" Mode="In" />
+          <Parameter Name="code" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="spUpdatePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
         <Function Name="validateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="userName" Type="nvarchar" Mode="In" />
           <Parameter Name="password" Type="nvarchar" Mode="In" />
@@ -196,6 +215,7 @@
           <NavigationProperty Name="customer" Relationship="Self.FK__Account__userNam__0DAF0CB0" FromRole="Account" ToRole="customer" />
           <NavigationProperty Name="ConsumptionCharges" Relationship="Self.FK__Consumpti__accou__21B6055D" FromRole="Account" ToRole="ConsumptionCharges" />
           <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__account__267ABA7A" FromRole="Account" ToRole="Payment" />
+          <Property Name="LastMonthDue" Type="Double" />
         </EntityType>
         <EntityType Name="Charge">
           <Key>
@@ -362,6 +382,24 @@
             <Parameter Name="tarrifCategory" Mode="In" Type="String" />
             <Parameter Name="region" Mode="In" Type="String" />
           </FunctionImport>
+          <FunctionImport Name="spCheckBill" ReturnType="Collection(ARMModel.spCheckBill_Result)">
+          <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spConsumptionHistory" ReturnType="Collection(ARMModel.spConsumptionHistory_Result)">
+          <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spInsertPaymentNew">
+            <Parameter Name="acNumber" Mode="In" Type="String" />
+            <Parameter Name="amount" Mode="In" Type="Double" />
+            <Parameter Name="bank" Mode="In" Type="String" />
+            <Parameter Name="creditCardNo" Mode="In" Type="String" />
+            <Parameter Name="expiryDate" Mode="In" Type="DateTime" />
+            <Parameter Name="code" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spUpdatePassword">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="getCustomerInfo_Result">
           <Property Type="String" Name="userName" Nullable="false" MaxLength="40" />
@@ -374,6 +412,26 @@
           <Property Type="String" Name="tarrifCategory" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="region" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <ComplexType Name="spCheckBill_Result">
+          <Property Type="String" Name="accountNumber" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="VATRegNo" Nullable="true" MaxLength="40" />
+          <Property Type="Double" Name="LastMonthDue" Nullable="true" />
+          <Property Type="Int32" Name="unitsConsumed" Nullable="true" />
+          <Property Type="Double" Name="domesticCatPrice" Nullable="true" />
+          <Property Type="Int32" Name="lastReading" Nullable="true" />
+          <Property Type="Int32" Name="currentMonthReading" Nullable="true" />
+          <Property Type="Double" Name="totalDue" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spConsumptionHistory_Result">
+          <Property Type="String" Name="accountNumber" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="year" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="month" Nullable="false" MaxLength="10" />
+          <Property Type="DateTime" Name="date" Nullable="true" />
+          <Property Type="Double" Name="amount" Nullable="true" />
+          <Property Type="String" Name="chartX" Nullable="false" MaxLength="21" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -383,6 +441,7 @@
           <EntitySetMapping Name="Accounts">
             <EntityTypeMapping TypeName="ARMModel.Account">
               <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="LastMonthDue" ColumnName="LastMonthDue" />
                 <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="category" ColumnName="category" />
@@ -482,6 +541,36 @@
           <FunctionImportMapping FunctionImportName="changePassword" FunctionName="ARMModel.Store.changePassword" />
           <FunctionImportMapping FunctionImportName="createUser" FunctionName="ARMModel.Store.createUser" />
           <FunctionImportMapping FunctionImportName="editCustomer" FunctionName="ARMModel.Store.editCustomer" />
+          <FunctionImportMapping FunctionImportName="spCheckBill" FunctionName="ARMModel.Store.spCheckBill">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ARMModel.spCheckBill_Result">
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="VATRegNo" ColumnName="VATRegNo" />
+                <ScalarProperty Name="LastMonthDue" ColumnName="LastMonthDue" />
+                <ScalarProperty Name="unitsConsumed" ColumnName="unitsConsumed" />
+                <ScalarProperty Name="domesticCatPrice" ColumnName="domesticCatPrice" />
+                <ScalarProperty Name="lastReading" ColumnName="lastReading" />
+                <ScalarProperty Name="currentMonthReading" ColumnName="currentMonthReading" />
+                <ScalarProperty Name="totalDue" ColumnName="totalDue" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spConsumptionHistory" FunctionName="ARMModel.Store.spConsumptionHistory">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ARMModel.spConsumptionHistory_Result">
+                <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="chartX" ColumnName="chartX" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spInsertPaymentNew" FunctionName="ARMModel.Store.spInsertPaymentNew" />
+          <FunctionImportMapping FunctionImportName="spUpdatePassword" FunctionName="ARMModel.Store.spUpdatePassword" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

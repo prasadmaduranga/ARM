@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CustomerMaster.master.cs" Inherits="ARM.Customer.CustomerMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title></title>
+    <link href="../../bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <%--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>--%>
+    <script src="../../bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="../../bootstrap-3.3.5-dist/js/jquery.js"></script>
+    <link href="../../bootstrap-3.3.5-dist/css/Custom.css" rel="stylesheet" />
+    <script src="http://localhost:41826/bootstrap-3.3.5-dist/js/Custom.js"></script>
+    <script src="http://localhost:41826/bootstrap-3.3.5-dist/js/jquerymin1.9.1.js"></script>
+    <link href="../../bootstrap-3.3.5-dist/css/footer-distributed-with-address-and-phones.css" rel="stylesheet" />
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" />
+
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server" style="padding-left: 5%; padding-right: 5%; padding-top: 1%;">
+        
+
+        <div class="row">
+            <div class="col-sm-12">
+                <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                    <ContentTemplate>
+                        <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+
+                            <ContentTemplate>
+                                <asp:ScriptManager ID="ScriptManager1" runat="server">
+                                </asp:ScriptManager>
+                            </ContentTemplate>
+
+                        </asp:UpdatePanel>
+                    </ContentTemplate>
+                </asp:UpdatePanel>
+            </div>
+
+        </div>
+        <div class="row ">
+
+
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <asp:ImageButton ID="ImageButton2" CssClass="img" runat="server" ImageUrl="~/Images/logo6.png" />
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="../Customer/Home.aspx">Home <span class="sr-only">(current)</span></a></li>
+                            <li><a href="../Customer/ViewProfile.aspx">Profile</a></li>
+                            <li><a href="../Customer/CheckBill.aspx">Check Bill</a></li>
+                            <li><a href="../Customer/PayOnine.aspx">Pay Online</a></li>
+                            <li><a href="../Customer/ChangePassword.aspx">Change Password</a></li>
+                            
+
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <asp:ImageButton ID="ImageButton1" runat="server" Height="38px" OnClick="ImageButton1_Click" Width="38px" /></li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click"></asp:LinkButton></li>
+                            <li>
+                                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click"></asp:LinkButton></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-sm-3" style="min-height: 460px;">
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        <br />
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+            <div class="col-sm-9 divscroll" style="min-height: 460px;">
+                <div style="">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        <p>
+                            <br />
+                        </p>
+                    </asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="row" style="">
+            <div class="col-sm-12" style="padding: 0px">
+                <footer class="footer-distributed">
+
+                    <div class="footer-left">
+
+                        <h3>Shiham Mashoor<span></span></h3>
+
+
+
+                        <p class="footer-company-name">shihambin@gmail.com &copy; 2015</p>
+                    </div>
+
+                    <div class="footer-center">
+
+                        <div>
+                            <%-- <i class="fa fa-map-marker"  style="width:25px;height:25px;"></i>--%>
+                            <asp:Image ID="Image1" Height="42px" Width="75px" ImageUrl="../Images/kduf.png" runat="server" />
+                            <p><span>General Sir John Kotelawala Defence University</span>Sri Lanka</p>
+                        </div>
+
+
+
+
+                    </div>
+
+                    <div class="footer-right">
+
+
+
+                        <div class="footer-icons">
+
+                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="#" target="_blank"><i class="fa fa-github"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </footer>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>

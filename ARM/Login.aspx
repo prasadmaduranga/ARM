@@ -1,14 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ARM.Login" %>
 
 
-<%--/*===================================STUDENT PERFORMANCE ANALYZER=====================================
-
- * *Presentation  layer ::Contain all the inter faces for the application
-                           which interacts with the user
- * * Login.cs   : Get the correct user and logs in 
- ====================================================================================================*/
---%>
-
 
 
 <!DOCTYPE html>
@@ -23,8 +15,7 @@
     <link href="bootstrap-3.3.5-dist/css/bootstrap.css" rel="stylesheet" />
     <meta charset="UTF-8" />
 
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
-    <title>Grade Performance Analyzer</title>
+    <title>Automated Meter Reading System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Login and Registration Form with HTML5 and CSS3" />
     <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
@@ -49,10 +40,10 @@
             <header>
                 <div style="float: left">
 
-                    <asp:Image ID="Image1" CssClass="img2" ImageUrl="Images/imagefinal5.png" runat="server" />
+                    <asp:Image ID="Image1" CssClass="img2" ImageUrl="Images/logo6.png" Height="193px" runat="server" />
 
                 </div>
-                <h1 style="width: 78%; padding-left: 215px;">Grade Performance Analyzer</h1>
+                <h1 style="width: 78%; padding-left: 215px;">Automated Meter Reading System</h1>
             </header>
             <section>
                 <div id="container_demo">

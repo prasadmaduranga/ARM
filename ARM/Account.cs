@@ -27,6 +27,7 @@ namespace ARM
         public string VATRegNo { get; set; }
         public Nullable<int> lastReading { get; set; }
         public Nullable<int> currentMonthReading { get; set; }
+        public Nullable<double> LastMonthDue { get; set; }
     
         public virtual customer customer { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

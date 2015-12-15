@@ -658,8 +658,9 @@ padding-top:0px;
 .img2 {
     position: absolute;
     left: 279px;
-    top: 2px;
+    top: 33px;
     z-index: 25;
+    height:193px;
 }
 #ContentPlaceHolder2_GridView1 > tbody > tr:nth-child(1) > th:nth-child(3) > a:hover,#ContentPlaceHolder2_GridView2 > tbody > tr:nth-child(1) > th > a:hover,#ContentPlaceHolder2_GridView1 > tbody > tr:nth-child(1) > th > a:hover {
 
