@@ -48,5 +48,130 @@ namespace ARM
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("addition3");
         }
+    
+        public virtual ObjectResult<getCustomerInfo_Result> getCustomerInfo(string userName)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<getCustomerInfo_Result>("getCustomerInfo", userNameParameter);
+        }
+    
+        public virtual ObjectResult<Nullable<int>> validateCustomer(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("validateCustomer", userNameParameter, passwordParameter);
+        }
+    
+        public virtual int changePassword(string userName, string password)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("changePassword", userNameParameter, passwordParameter);
+        }
+    
+        public virtual int createUser(string userName, string name, string address, string homeTel, string mobile, string nIC, string password, string email, string tarrifCategory, string region, string imageURL)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var homeTelParameter = homeTel != null ?
+                new ObjectParameter("homeTel", homeTel) :
+                new ObjectParameter("homeTel", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            var nICParameter = nIC != null ?
+                new ObjectParameter("NIC", nIC) :
+                new ObjectParameter("NIC", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var tarrifCategoryParameter = tarrifCategory != null ?
+                new ObjectParameter("tarrifCategory", tarrifCategory) :
+                new ObjectParameter("tarrifCategory", typeof(string));
+    
+            var regionParameter = region != null ?
+                new ObjectParameter("region", region) :
+                new ObjectParameter("region", typeof(string));
+    
+            var imageURLParameter = imageURL != null ?
+                new ObjectParameter("imageURL", imageURL) :
+                new ObjectParameter("imageURL", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("createUser", userNameParameter, nameParameter, addressParameter, homeTelParameter, mobileParameter, nICParameter, passwordParameter, emailParameter, tarrifCategoryParameter, regionParameter, imageURLParameter);
+        }
+    
+        public virtual int editCustomer(string userName, string name, string address, string homeTel, string mobile, string nIC, string email, string tarrifCategory, string region)
+        {
+            var userNameParameter = userName != null ?
+                new ObjectParameter("userName", userName) :
+                new ObjectParameter("userName", typeof(string));
+    
+            var nameParameter = name != null ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(string));
+    
+            var addressParameter = address != null ?
+                new ObjectParameter("address", address) :
+                new ObjectParameter("address", typeof(string));
+    
+            var homeTelParameter = homeTel != null ?
+                new ObjectParameter("homeTel", homeTel) :
+                new ObjectParameter("homeTel", typeof(string));
+    
+            var mobileParameter = mobile != null ?
+                new ObjectParameter("mobile", mobile) :
+                new ObjectParameter("mobile", typeof(string));
+    
+            var nICParameter = nIC != null ?
+                new ObjectParameter("NIC", nIC) :
+                new ObjectParameter("NIC", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var tarrifCategoryParameter = tarrifCategory != null ?
+                new ObjectParameter("tarrifCategory", tarrifCategory) :
+                new ObjectParameter("tarrifCategory", typeof(string));
+    
+            var regionParameter = region != null ?
+                new ObjectParameter("region", region) :
+                new ObjectParameter("region", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("editCustomer", userNameParameter, nameParameter, addressParameter, homeTelParameter, mobileParameter, nICParameter, emailParameter, tarrifCategoryParameter, regionParameter);
+        }
     }
 }

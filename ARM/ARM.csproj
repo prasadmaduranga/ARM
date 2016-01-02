@@ -100,6 +100,7 @@
     <Content Include="ARMDataModel.edmx.diagram">
       <DependentUpon>ARMDataModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Customer\CustomerMaster.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,7 +133,9 @@
     <Content Include="bootstrap-3.3.5-dist\js\jquery.js" />
     <Content Include="bootstrap-3.3.5-dist\js\jquerymin1.9.1.js" />
     <Content Include="bootstrap-3.3.5-dist\js\npm.js" />
-    <Content Include="Customer\CustomerIndex.aspx" />
+    <Content Include="Customer\Home.aspx" />
+    <Content Include="Customer\ViewProfile.aspx" />
+    <Content Include="Customer\EditProfile.aspx" />
     <Content Include="Images\128-215.jpg" />
     <Content Include="Images\adiesha.png" />
     <Content Include="Images\amanda.png" />
@@ -266,14 +269,38 @@
     <Compile Include="customer.cs">
       <DependentUpon>ARMDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Customer\CustomerIndex.aspx.cs">
-      <DependentUpon>CustomerIndex.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerMaster.Master.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Customer\CustomerIndex.aspx.designer.cs">
-      <DependentUpon>CustomerIndex.aspx</DependentUpon>
+    <Compile Include="Customer\CustomerMaster.Master.designer.cs">
+      <DependentUpon>CustomerMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ViewProfile.aspx.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\ViewProfile.aspx.designer.cs">
+      <DependentUpon>ViewProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer\EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="DBHnadler.cs" />
+    <Compile Include="getCustomerInfo_Result.cs">
+      <DependentUpon>ARMDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

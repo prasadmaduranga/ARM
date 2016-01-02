@@ -11,17 +11,21 @@ using System.Data;
 using System.Text;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
-
+using System.Data.Entity;
+using ARM;
 
 namespace ARM
 {
     public class DBHnadler
     {
 
-        //public static Boolean validateUser(string userName, string password) {
+        public static int validateUser(string userName, string password)
+        {
 
-           
-            
-        //}
+            ARMEntities dbContext = new ARMEntities();
+            int result = dbContext.validateCustomer(userName, password).FirstOrDefault()??-1;
+            return result;
+
+        }
     }
 }

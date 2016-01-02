@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ARMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ARMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Account">
           <Key>
             <PropertyRef Name="accountNumber" />
@@ -51,6 +51,7 @@
           <Property Name="email" Type="nvarchar" MaxLength="60" />
           <Property Name="tarrifCategory" Type="nvarchar" MaxLength="20" />
           <Property Name="region" Type="nvarchar" MaxLength="20" />
+          <Property Name="imageURL" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -123,6 +124,41 @@
         <Function Name="addition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="addition2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="addition3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="changePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="createUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="homeTel" Type="nvarchar" Mode="In" />
+          <Parameter Name="mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="NIC" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="tarrifCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="region" Type="nvarchar" Mode="In" />
+          <Parameter Name="imageURL" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="editCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="name" Type="nvarchar" Mode="In" />
+          <Parameter Name="address" Type="nvarchar" Mode="In" />
+          <Parameter Name="homeTel" Type="nvarchar" Mode="In" />
+          <Parameter Name="mobile" Type="nvarchar" Mode="In" />
+          <Parameter Name="NIC" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="tarrifCategory" Type="nvarchar" Mode="In" />
+          <Parameter Name="region" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="getCustomerInfo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="validateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="nvarchar" Mode="In" />
+          <Parameter Name="password" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="ARMModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Charges" EntityType="Self.Charges" Schema="dbo" store:Type="Tables" />
@@ -143,8 +179,7 @@
             <End Role="Payment" EntitySet="Payment" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ARMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -199,6 +234,7 @@
           <Property Name="tarrifCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="region" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__userNam__0DAF0CB0" FromRole="customer" ToRole="Account" />
+          <Property Name="imageURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Payment">
           <Key>
@@ -291,7 +327,53 @@
           <FunctionImport Name="addition" />
           <FunctionImport Name="addition2" />
           <FunctionImport Name="addition3" />
+          <FunctionImport Name="getCustomerInfo" ReturnType="Collection(ARMModel.getCustomerInfo_Result)">
+          <Parameter Name="userName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="validateCustomer" ReturnType="Collection(Int32)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="changePassword">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="createUser">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="homeTel" Mode="In" Type="String" />
+            <Parameter Name="mobile" Mode="In" Type="String" />
+            <Parameter Name="NIC" Mode="In" Type="String" />
+            <Parameter Name="password" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="tarrifCategory" Mode="In" Type="String" />
+            <Parameter Name="region" Mode="In" Type="String" />
+            <Parameter Name="imageURL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="editCustomer">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="address" Mode="In" Type="String" />
+            <Parameter Name="homeTel" Mode="In" Type="String" />
+            <Parameter Name="mobile" Mode="In" Type="String" />
+            <Parameter Name="NIC" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="tarrifCategory" Mode="In" Type="String" />
+            <Parameter Name="region" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="getCustomerInfo_Result">
+          <Property Type="String" Name="userName" Nullable="false" MaxLength="40" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="address" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="homeTel" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="mobile" Nullable="true" MaxLength="12" />
+          <Property Type="String" Name="NIC" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="60" />
+          <Property Type="String" Name="tarrifCategory" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="region" Nullable="true" MaxLength="20" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -333,6 +415,7 @@
           <EntitySetMapping Name="customers">
             <EntityTypeMapping TypeName="ARMModel.customer">
               <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="imageURL" ColumnName="imageURL" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="userName" ColumnName="userName" />
                 <ScalarProperty Name="name" ColumnName="name" />
@@ -380,6 +463,25 @@
           <FunctionImportMapping FunctionImportName="addition" FunctionName="ARMModel.Store.addition" />
           <FunctionImportMapping FunctionImportName="addition2" FunctionName="ARMModel.Store.addition2" />
           <FunctionImportMapping FunctionImportName="addition3" FunctionName="ARMModel.Store.addition3" />
+          <FunctionImportMapping FunctionImportName="getCustomerInfo" FunctionName="ARMModel.Store.getCustomerInfo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ARMModel.getCustomerInfo_Result">
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="homeTel" ColumnName="homeTel" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="NIC" ColumnName="NIC" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="tarrifCategory" ColumnName="tarrifCategory" />
+                <ScalarProperty Name="region" ColumnName="region" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="validateCustomer" FunctionName="ARMModel.Store.validateCustomer" />
+          <FunctionImportMapping FunctionImportName="changePassword" FunctionName="ARMModel.Store.changePassword" />
+          <FunctionImportMapping FunctionImportName="createUser" FunctionName="ARMModel.Store.createUser" />
+          <FunctionImportMapping FunctionImportName="editCustomer" FunctionName="ARMModel.Store.editCustomer" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

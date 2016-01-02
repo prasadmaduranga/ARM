@@ -9,6 +9,7 @@ using System.Data;
 using System.Text;
 using System.Security.Cryptography;
 using System.Data.SqlClient;
+using ARM;
 
 
 namespace ARM
@@ -38,7 +39,39 @@ namespace ARM
         // <param name="e"></param>
         protected void Button2_Click(object sender, EventArgs e)
         {
+            string password = TextBox2.Text;
 
+            MD5 md5Hash = MD5.Create();
+
+            string hash = GetMd5Hash(md5Hash, password);
+
+
+            hash = hash.Substring(3, 12);
+            
+
+
+            int result = DBHnadler.validateUser(TextBox1.Text,hash);
+
+            if (result == 1)
+            {
+                ARMEntities dbContext = new ARMEntities();
+                getCustomerInfo_Result obj = dbContext.getCustomerInfo(TextBox1.Text).FirstOrDefault();
+
+
+                Session["userName"] = obj.userName;
+                Session["name"] = obj.userName;
+
+                Session["imageURL"] = obj.imageURL;
+
+
+                Response.Redirect("~/Customer/CustomerIndex.aspx");
+            }
+            else {
+                ClientScript.RegisterStartupScript(GetType(), "hwaa", "alert('Either username or password incorrect');", true);
+
+                TextBox1.Text = "";
+                TextBox2.Text = "";
+            }
            
         }
 
@@ -58,25 +91,6 @@ namespace ARM
         {
 
 
-            if (FileUpload1.HasFile)
-            {
-                String extension = System.IO.Path.GetExtension(FileUpload1.FileName);
-                if (extension.Equals(".PNG", StringComparison.InvariantCultureIgnoreCase) || extension.Equals(".jpeg", StringComparison.InvariantCultureIgnoreCase) || extension.Equals(".jpg", StringComparison.InvariantCultureIgnoreCase))
-                {
-                    FileUpload1.SaveAs(Server.MapPath("~/Images/" + FileUpload1.FileName));
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('Incompatible File Format');", true);
-                    FileUpload1.Attributes.Clear();
-
-                }
-            }
-            else
-            {
-                ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('Choose an image');", true);
-
-            }
         }
 
 
@@ -92,25 +106,8 @@ namespace ARM
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            string imageURL = "";
-            if (FileUpload1.HasFile)
-            {
-                imageURL = "~/Images/" + FileUpload1.FileName;
-                Session["imageURL"] = imageURL;
-            }
-            else
-            {
-                imageURL = "~/Images/" + "Default.jpg";
-                Session["imageURL"] = imageURL;
-
-            }
-
-            int i = RadioButtonList1.SelectedIndex;
-
-            string userType = "";
-            if (i == 0) { userType = "CourseAdmin"; }
-            else if (i == 1) { userType = "Lecturer"; }
-            else if (i == 2) { userType = "IndustryProfessional"; }
+          
+          
 
             string password = TextBox7.Text;
 
@@ -121,7 +118,37 @@ namespace ARM
 
             hash = hash.Substring(3, 12);
 
+            ARMEntities dbcontext = new ARMEntities();
            
+
+
+
+
+
+            string imageURL = "~/Imahges/Defualt.png";
+            if (Page.IsValid)
+            {
+                dbcontext.createUser(TextBox9.Text, TextBox6.Text, TextBox13.Text, TextBox5.Text, TextBox3.Text, TextBox10.Text, hash, TextBox4.Text,
+                    TextBox11.Text, TextBox12.Text, imageURL);
+
+
+                ARMEntities dbContext = new ARMEntities();
+                getCustomerInfo_Result obj = dbContext.getCustomerInfo(TextBox9.Text).FirstOrDefault();
+
+
+                Session["userName"] = obj.userName;
+                Session["name"] = obj.userName;
+
+                Session["imageURL"] = obj.imageURL;
+
+
+                Response.Redirect("~/Customer/CustomerIndex.aspx");
+            }
+            else {
+                ClientScript.RegisterStartupScript(GetType(), "hwaa", "alert('Invalid data');", true);
+                Response.Redirect("~/Login.aspx");
+            }
+
         }
 
         // <summary>

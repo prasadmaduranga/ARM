@@ -51,6 +51,7 @@
     <Property Name="tarrifCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="region" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__userNam__0DAF0CB0" FromRole="customer" ToRole="Account" />
+    <Property Name="imageURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Payment">
     <Key>
@@ -143,5 +144,51 @@
     <FunctionImport Name="addition" />
     <FunctionImport Name="addition2" />
     <FunctionImport Name="addition3" />
+    <FunctionImport Name="getCustomerInfo" ReturnType="Collection(ARMModel.getCustomerInfo_Result)">
+      <Parameter Name="userName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="validateCustomer" ReturnType="Collection(Int32)">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="changePassword">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="createUser">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="homeTel" Mode="In" Type="String" />
+      <Parameter Name="mobile" Mode="In" Type="String" />
+      <Parameter Name="NIC" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="tarrifCategory" Mode="In" Type="String" />
+      <Parameter Name="region" Mode="In" Type="String" />
+      <Parameter Name="imageURL" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="editCustomer">
+      <Parameter Name="userName" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="homeTel" Mode="In" Type="String" />
+      <Parameter Name="mobile" Mode="In" Type="String" />
+      <Parameter Name="NIC" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="tarrifCategory" Mode="In" Type="String" />
+      <Parameter Name="region" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="getCustomerInfo_Result">
+    <Property Type="String" Name="userName" Nullable="false" MaxLength="40" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="address" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="homeTel" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="mobile" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="NIC" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="email" Nullable="true" MaxLength="60" />
+    <Property Type="String" Name="tarrifCategory" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="region" Nullable="true" MaxLength="20" />
+  </ComplexType>
 </Schema>

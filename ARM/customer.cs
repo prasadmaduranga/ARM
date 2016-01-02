@@ -31,6 +31,7 @@ namespace ARM
         public string email { get; set; }
         public string tarrifCategory { get; set; }
         public string region { get; set; }
+        public string imageURL { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Account> Accounts { get; set; }

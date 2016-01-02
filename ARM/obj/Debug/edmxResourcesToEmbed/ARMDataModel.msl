@@ -36,6 +36,7 @@
     <EntitySetMapping Name="customers">
       <EntityTypeMapping TypeName="ARMModel.customer">
         <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="imageURL" ColumnName="imageURL" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="name" ColumnName="name" />
@@ -83,5 +84,24 @@
     <FunctionImportMapping FunctionImportName="addition" FunctionName="ARMModel.Store.addition" />
     <FunctionImportMapping FunctionImportName="addition2" FunctionName="ARMModel.Store.addition2" />
     <FunctionImportMapping FunctionImportName="addition3" FunctionName="ARMModel.Store.addition3" />
+    <FunctionImportMapping FunctionImportName="getCustomerInfo" FunctionName="ARMModel.Store.getCustomerInfo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ARMModel.getCustomerInfo_Result">
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="homeTel" ColumnName="homeTel" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tarrifCategory" ColumnName="tarrifCategory" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="validateCustomer" FunctionName="ARMModel.Store.validateCustomer" />
+    <FunctionImportMapping FunctionImportName="changePassword" FunctionName="ARMModel.Store.changePassword" />
+    <FunctionImportMapping FunctionImportName="createUser" FunctionName="ARMModel.Store.createUser" />
+    <FunctionImportMapping FunctionImportName="editCustomer" FunctionName="ARMModel.Store.editCustomer" />
   </EntityContainerMapping>
 </Mapping>
