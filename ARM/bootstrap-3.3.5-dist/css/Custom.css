@@ -1,0 +1,928 @@
+﻿body {
+/*background-image:url("../../Images/128-215.jpg");
+background-repeat:repeat;*/
+background-color:white;
+}
+
+#form1 > div > div.col-sm-9 {
+
+    border-color:lightblue;
+
+
+}
+#ContentPlaceHolder2_DetailsView1_Image1 {
+margin-left:0px;
+margin-top:4px;
+margin-bottom:4px;
+
+
+}
+
+.navbar-default{
+   /* -moz-box-shadow: 4px -4px 8px #14aae0;
+   -webkit-box-shadow: 4px -4px 8px #14aae0;
+   box-shadow: 4px -4px 8px #14aae0;
+    
+       */
+    -moz-box-shadow: 4px -2px 6px #0b0d0d;
+    -webkit-box-shadow: 4px -2px 6px #0b0d0d;
+    box-shadow: 4px -2px 6px #0b0d0d;
+
+
+
+
+}
+#statSpecial > div > h3 {
+
+color:black;
+}
+
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+
+    background-color:white;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul{
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+
+    .sidebar-nav .navbar li, #ContentPlaceHolder1_RadioButtonList1 tr td {
+       margin:2px;
+   background-color: #0179ac;
+            
+         }
+
+    .sidebar-nav .navbar li:active,.sidebar-nav .navbar li:hover, #ContentPlaceHolder1_RadioButtonList1 tr td:active, #ContentPlaceHolder1_RadioButtonList1 tr td:hover {
+  
+
+             background-color:#140c52;
+        
+         }
+
+    .sidebar-nav {
+    width:250px;
+    
+    }
+}
+#sidenavsm3 {
+padding-left:0px;
+
+}
+
+sidebar-nav #Menu1 {
+width:100%;
+
+}
+#ContentPlaceHolder1_Menu1 .level1 .nav .navbar-nav .static {
+
+width:100%;
+}
+#ContentPlaceHolder1_Menu1{
+
+width:100%;
+
+}
+.navbar-collapse .collapse .sidebar-navbar-collapse ul {
+
+width:100px;
+}
+#ContentPlaceHolder1_Menu1 ul {
+width:100px;
+
+
+}
+
+#ContentPlaceHolder1_RadioButtonList1 tr td {
+   border:solid white 2px;
+   color:white;
+       height: 42px;
+
+}
+#ContentPlaceHolder1_RadioButtonList1 {
+
+width:100%;
+    box-shadow: 4px -2px 6px #0b0d0d;
+}
+
+#form1 > div:nth-child(10) > div.col-sm-3,#form1 > div:nth-child(12) > div.col-sm-3{
+padding-left:0px;
+}
+
+
+#ContentPlaceHolder1_RadioButtonList1 > tbody > tr > td > input {
+
+visibility:hidden;
+}
+#ContentPlaceHolder1_RadioButtonList1 > tbody > tr > td > span > input {
+
+    
+visibility:hidden;
+color: 	#F0F0F0;
+
+}
+#ContentPlaceHolder1_RadioButtonList1 > tbody > tr > td > span > label {
+
+
+color: 	#F0F0F0;
+
+}
+
+#ContentPlaceHolder1_Panel2 > fieldset > table > tbody > tr > td {
+
+
+
+}
+
+#ContentPlaceHolder1_Panel1 > div > div.panel-body {
+
+    background-color:lightblue;
+    opacity:.9;
+
+
+
+
+
+}
+
+#ContentPlaceHolder1_Panel1 > div > div.panel-body:hover,#ContentPlaceHolder1_Panel1 > div > div.panel-body:active {
+
+  
+    opacity:1;
+
+
+
+}
+
+#ContentPlaceHolder1_Panel1 > div:hover {
+
+    -moz-box-shadow: 4px -2px 6px #0b0d0d;
+    -webkit-box-shadow: 4px -2px 6px #0b0d0d;
+    box-shadow: 4px -2px 6px #0b0d0d;
+
+
+}
+#ContentPlaceHolder1_Panel1 > div {
+    border: solid 2px lightblue;
+    -moz-border-radius-topleft: 12px;
+    -moz-border-radius-topright: 12px;
+    -moz-border-radius-bottomleft: 11px;
+    -moz-border-radius-bottomright: 11px;
+    -webkit-border-top-left-radius: 12px;
+    -webkit-border-top-right-radius: 12px;
+    -webkit-border-bottom-left-radius: 11px;
+    -webkit-border-bottom-right-radius: 11px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+
+
+
+
+    #ContentPlaceHolder1_Panel1 > div > div.panel-body > table > tbody > tr >td:hover{
+ transform: rotate(0deg) scale(1.002) skew(0deg) translate(6px);
+    -webkit-transform: rotate(0deg) scale(1.002) skew(0deg) translate(6px);
+    -moz-transform: rotate(0deg) scale(1.002) skew(0deg) translate(6px);
+    -o-transform: rotate(0deg) scale(1.002) skew(0deg) translate(6px);
+    -ms-transform: rotate(0deg) scale(1.002) skew(0deg) translate(6px);
+    }
+
+
+#ContentPlaceHolder1_Menu1 > ul {
+
+width:100%;
+}
+
+#form1 > div:nth-child(11) > div.col-sm-3 {
+
+    padding-left:0px;
+}
+
+#form1 > div:nth-child(10) > div.col-sm-9,#form1 > div:nth-child(10) > div.col-sm-3 {
+
+background-color:white;
+
+}
+
+
+#ContentPlaceHolder2_DetailsView1 > tbody > tr:nth-child(1),#ContentPlaceHolder2_DetailsView2 > tbody > tr:nth-child(1),#ContentPlaceHolder2_DetailsView3 > tbody > tr:nth-child(1) {
+    background-color:  #0179ac;
+    font-weight:bold;
+color:white;
+
+
+}
+
+#ContentPlaceHolder2_DetailsView1 > tbody,#ContentPlaceHolder2_DetailsView2 > tbody,#ContentPlaceHolder2_DetailsView3 > tbody {
+border-left: #0179ac solid 1px;
+
+}
+
+
+
+#ContentPlaceHolder2_DetailsView1,#ContentPlaceHolder2_DetailsView2 ,#ContentPlaceHolder2_DetailsView3  {
+    -moz-box-shadow: 3px -1px 4px #000000;
+    -webkit-box-shadow: 3px -1px 4px #000000;
+    box-shadow: 3px -1px 4px #000000;
+}
+#ContentPlaceHolder2_DetailsView1 >.textbox, #ContentPlaceHolder2_DetailsView1 >.input{
+
+
+
+}
+
+
+
+
+/*For text box area  and input inside forms*/
+
+    #ContentPlaceHolder2_DetailsView1 input, #ContentPlaceHolder2_DetailsView1 textarea, #ContentPlaceHolder2_DetailsView2 input, #ContentPlaceHolder2_DetailsView2 textarea
+    ,   .gridViewCustom  input,.gridViewCustom  textarea
+    
+     {
+  
+
+        display: block;
+        width: 100%;
+        height: 38px;
+        padding: 8px 12px;
+        font-size: 14px;
+        line-height: 1.42857143;
+        color: #555555;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+
+    }
+
+
+#ContentPlaceHolder2_DetailsView1,#ContentPlaceHolder2_DetailsView2 ,#ContentPlaceHolder2_DetailsView3  {
+
+width:auto;
+}
+    #ContentPlaceHolder2_DetailsView1  select,#ContentPlaceHolder2_DetailsView2 select ,#ContentPlaceHolder2_DetailsView3  select  {
+    
+    width:100%;
+    }
+#ContentPlaceHolder2_DetailsView1  input,#ContentPlaceHolder2_DetailsView2  input ,#ContentPlaceHolder2_DetailsView3 input,gri {
+    
+    width:100%;
+    }
+/*#ContentPlaceHolder2_DetailsView1_RadioButtonList3 > tbody, #ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody {
+
+    width:100%;
+
+}
+    #ContentPlaceHolder2_DetailsView1_RadioButtonList3 > tbody > tr > td, #ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody > tr > td {
+    width:50%;
+    
+    }
+        #ContentPlaceHolder2_DetailsView1_RadioButtonList3 > tbody > tr > td input ,#ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody > tr > td input {
+        
+        
+        width:20%;
+        
+        }*/
+
+#ContentPlaceHolder2_DetailsView1_RadioButtonList3,#ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody
+{
+width:100%;
+}
+  #ContentPlaceHolder2_DetailsView1_RadioButtonList3 > tbody > tr > td:nth-child(1),  #ContentPlaceHolder2_DetailsView1_RadioButtonList3 > tbody > tr > td:nth-child(2), #ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody > tr > td:nth-child(1),#ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody > tr > td:nth-child(2){
+    
+    width:50%;
+    
+    }
+
+#ContentPlaceHolder2_DetailsView1_RadioButtonList3_0, #ContentPlaceHolder2_DetailsView1_RadioButtonList3_1, #ContentPlaceHolder2_DetailsView1_RadioButtonList4_0, #ContentPlaceHolder2_DetailsView1_RadioButtonList4_1 {
+
+width:20px;
+
+}
+#ContentPlaceHolder2_DetailsView1_RadioButtonList3 tr td input,#ContentPlaceHolder2_DetailsView1_RadioButtonList4 tr td input {
+width:20px;
+
+
+}
+.gridViewCustom {
+text-align:center;
+width:auto;
+  box-shadow: 3px -1px 4px #000000;
+}
+    .gridViewCustom > tbody > tr > th {
+    padding-left:20px;
+    padding-right:20px;
+       color:white;   
+    background-color:#0179ac;
+    }
+      .gridViewCustom > tbody > tr > th:hover,  .gridViewCustom > tbody > tr > th:active{
+    
+    background-color:#0179ac;
+    }
+
+    
+    .gridViewCustom > tbody {
+    border-left:solid 1px black;
+
+    
+    }
+
+    /*//==========================================*/
+#ContentPlaceHolder2_GridView1 > tbody > tr:hover,
+#ContentPlaceHolder2_GridView2 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView3 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView4 > tbody > tr:hover,
+#ContentPlaceHolder2_GridView5 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView6 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView7 > tbody > tr:hover,
+#ContentPlaceHolder2_GridView8 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView9> tbody > tr:hover, 
+#ContentPlaceHolder2_GridView10 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView11 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView12> tbody > tr:hover,
+#ContentPlaceHolder2_GridView13 > tbody > tr:hover, 
+#ContentPlaceHolder2_GridView14> tbody > tr:hover, 
+#ContentPlaceHolder2_GridView15> tbody > tr:hover
+ {
+
+    background-color: #D8D8D8;
+    }
+#ContentPlaceHolder2 .gridViewCustom  {
+    width:auto;
+        box-shadow: 3px -1px 4px #000000;
+}
+
+
+.selectedRow {
+    background-color: #D8D8D8;
+
+}
+.editCustom {
+
+width:initial;
+
+}
+
+
+    .editCustom input {
+    height:auto;
+    padding-bottom:0px;
+    padding-top:0px;
+
+    
+    }
+
+.gridViewCustom #TextBox3 {
+     max-width:200px;
+
+
+}
+#ContentPlaceHolder2_GridView3 #TextBox4 ,.gridViewCustom > tbody > TextBox4_0,.gridViewCustom > tbody > tr.selectedRow.editCustom > td:nth-child(4){
+    max-width:100px;
+
+}
+#ContentPlaceHolder2_GridView3 #TextBox3.gridViewCustom > tbody > TextBox3_0,.gridViewCustom > tbody > tr.selectedRow.editCustom > td:nth-child(3) {
+     max-width:200px;
+
+
+}
+ #ContentPlaceHolder2_GridView3  tbody  tr td:nth-child(1) {
+max-width:110px;
+
+
+}
+
+
+.view1Special {
+
+margin:0px;
+
+}
+
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+* {
+  margin: 0;
+  padding: 0;
+}*/
+/*body {
+  background: #111;
+  color: #fff;
+  font-family: 'Open sans', sans-serif;
+  font-weight: 300;
+  font-size: 20pt;
+}*/
+.homemenu a {
+  color: #fff;
+  text-decoration: none;
+    font-weight: 300;
+  font-size: 20pt;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.homemenu {
+  width: 650px;
+  margin: 30px auto;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow);
+
+.homemenu a {
+  width: 200px;
+  line-height: 200px;
+  display: block;
+  margin: 5px;
+  text-align: center;
+  float: left;
+  opacity: 1;
+
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.homemenu2 {
+  width: 650px;
+  margin: 30px auto;
+  font-size:-webkit-xxx-large;
+
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+.homemenu2 a {
+  width: 300px;
+  line-height: 200px;
+  display: block;
+  margin: 5px;
+  text-align: center;
+  float: left;
+  opacity: 1;
+font-size:25pt;
+font-family: 'PT Sans Narrow', sans-serif;
+}
+
+
+.yellow { background: #fdd22a; }
+.yellow:hover {  -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black; }
+
+.blue { background: #009fe3; }
+.blue:hover {   -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black; }
+
+.purple { background: #574696; }
+.purple:hover {   -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black; }
+
+.orange { background: #ee7202; }
+.orange:hover {  -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black; }
+
+.pink { background: #e61c67; }
+.pink:hover {   -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black; }
+
+.green { background: #96c11f; }
+.green:hover {  -moz-box-shadow: 3px 3px 3px black;
+    -webkit-box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px black;  }
+
+#ContentPlaceHolder2_Panel1 {
+
+
+padding-bottom:0px;
+}
+
+    #ContentPlaceHolder2_Panel1 .select,#ContentPlaceHolder2_DropDownList1,#ContentPlaceHolder2_DropDownList2 ,#ContentPlaceHolder2_DropDownList3  {
+    
+    padding-top:0px;
+    padding-bottom:0px;
+    height:26px;
+    width:100%;
+    }
+#ContentPlaceHolder1_Menu1 > ul {
+
+width:248px;
+}
+#ContentPlaceHolder2_Panel1 > div.panel-heading {
+background-color:#0179ac;
+
+}
+#ContentPlaceHolder2_Panel1 label,#ContentPlaceHolder2_Label1,#ContentPlaceHolder2_Label2,#ContentPlaceHolder2_Label3 ,#ContentPlaceHolder2_Label4{
+
+padding-left:0px;
+padding-right:0px;
+}
+#ContentPlaceHolder2_Panel1:hover {
+
+     box-shadow: 3px 3px 3px #dddddd;
+}
+
+#ContentPlaceHolder2_Panel1 .select {
+width:100%;
+}
+
+#ContentPlaceHolder2_Panel1 > div.panel-body.form-horizontal > div {
+    margin-bottom:0px;
+}
+
+.col-lg-3 .control-label {
+width:160px;
+
+}
+#Div4 {
+    position: absolute;
+    top: 0px;
+    width: 88%;
+    padding: 18px 6% 60px 6%;
+    margin: 0 0 35px 0;
+    background: rgb(247, 247, 247);
+    border: 1px solid rgba(147, 184, 189,0.8);
+    -webkit-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+    -moz-box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+    box-shadow: 0pt 2px 5px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px;
+}
+
+
+#statSpecial #ContentPlaceHolder2_Panel2 > div.panel-heading, #statSpecial #ContentPlaceHolder2_Panel3 > div.panel-heading,#statSpecial #ContentPlaceHolder2_Panel1 > div.panel-heading,
+#ContentPlaceHolder2_Panel9 > div.panel-heading,#ContentPlaceHolder2_Panel4 > div.panel-heading,#ContentPlaceHolder2_Panel5 > div.panel-heading,#ContentPlaceHolder2_Panel6 > div.panel-heading
+,#ContentPlaceHolder2_Panel7 > div.panel-heading,#ContentPlaceHolder2_Panel8 > div.panel-heading,#ContentPlaceHolder2_Panel10 > div.panel-heading {
+
+background-color:#0179ac;
+
+}
+
+
+#ContentPlaceHolder2_GridView15 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView14 > tbody > tr:nth-child(1) > th {
+text-align:center;
+}
+
+#statSpecial #ContentPlaceHolder2_Panel2 {
+margin-bottom:0px;
+border-bottom:0px;
+}
+    #statSpecial #ContentPlaceHolder2_Panel2 > div.panel-body.form-horizontal {
+    padding-bottom:0px;
+    
+    
+    }
+
+        #statSpecial #ContentPlaceHolder2_Panel2 > div.panel-body.form-horizontal > div {
+        margin-bottom:0px;
+        
+        }
+
+
+ #statSpecial #ContentPlaceHolder2 label {
+padding-top:0px;
+}
+#statSpecial #ContentPlaceHolder2 select, #statSpecial #ContentPlaceHolder2 input{
+height:auto;
+
+}
+#statSpecial #ContentPlaceHolder2_Panel1 {
+    box-shadow: 0px 0px 0px white;
+}
+
+#statSpecial #ContentPlaceHolder2_Label1 {
+
+padding-top:0px;
+
+}
+#statSpecial .form-horizontal .control-label {
+    padding-top:0px;
+    padding-right:0px;
+}
+#statSpecial #ContentPlaceHolder2_Panel1 ,#statSpecial #ContentPlaceHolder2_Panel2,#statSpecial #ContentPlaceHolder2_Panel3,
+#statSpecial #ContentPlaceHolder2_Panel4 ,#statSpecial #ContentPlaceHolder2_Panel4,#statSpecial #ContentPlaceHolder2_Panel6
+
+{
+
+border-top:0px;
+}
+
+#statSpecial > table > tbody > tr:nth-child(2) > td > div > div.panel-heading,#statSpecial > table > tbody > tr > td > div > div.panel-heading,#ContentPlaceHolder2_UpdatePanel2 > table > tbody > tr > td > div > div.panel-heading,
+#ContentPlaceHolder2_UpdatePanel2 > div > table > tbody > tr:nth-child(2) > td > div > div.panel-heading,#ContentPlaceHolder2_UpdatePanel2 > div > table > tbody > tr > td > div > div.panel-heading,
+#ContentPlaceHolder2_UpdatePanel3 > div.panel.panel-default > div.panel-heading,#form1 > div:nth-child(13) > div.col-sm-9 > div > div > div.panel-heading,
+#ContentPlaceHolder2_UpdatePanel3 > table > tbody > tr:nth-child(2) > td > div > div.panel-heading,#ContentPlaceHolder2_UpdatePanel3 > table > tbody > tr:nth-child(2) > td > div > div.panel-heading,#ContentPlaceHolder2_UpdatePanel3 > table > tbody > tr > td > div > div.panel-heading
+ {
+    background-color:#E8E8E8 ;
+    font-weight:700;
+
+
+}
+
+#statSpecial #ContentPlaceHolder2_DropDownList1, #statSpecial #ContentPlaceHolder2_DropDownList2,#statSpecial #ContentPlaceHolder2_DropDownList3,
+#statSpecial #ContentPlaceHolder2_DropDownList4, #statSpecial #ContentPlaceHolder2_DropDownList5,#statSpecial #ContentPlaceHolder2_DropDownList6{
+height:20px;
+width:160px;
+
+}
+#ContentPlaceHolder2 .form-horizontal .control-label ,#ContentPlaceHolder2_Label44,#ContentPlaceHolder2_Label65,#ContentPlaceHolder2_Label49{
+
+padding-top:0px;
+}
+.img {
+       position: absolute;
+    left: -70px;
+    top: -16px;
+    z-index: 2;
+        height: 142px;
+}
+
+.img2 {
+    position: absolute;
+    left: 279px;
+    top: 2px;
+    z-index: 25;
+}
+#ContentPlaceHolder2_GridView1 > tbody > tr:nth-child(1) > th:nth-child(3) > a:hover,#ContentPlaceHolder2_GridView2 > tbody > tr:nth-child(1) > th > a:hover,#ContentPlaceHolder2_GridView1 > tbody > tr:nth-child(1) > th > a:hover {
+
+    color:white;
+}
+
+
+
+
+
+
+
+
+#ContentPlaceHolder2_Label11 {
+    padding-right:0px;
+
+}
+#statSpecial > table > tbody > tr:nth-child(2) > td > div ,#statSpecial > table > tbody > tr:nth-child(2) > td > div > div.panel-body > table{
+width:100%;
+
+}
+#statSpecial > table:nth-child(3){
+
+    width:100%;
+}
+#statSpecial #ContentPlaceHolder2_Label11 {
+
+/*color:white;*/
+
+}
+#compareSpecial #ContentPlaceHolder2_Panel2 > div.panel-heading {
+
+
+}
+#compareSpecial #ContentPlaceHolder2_Panel2 > div.panel-heading,#ContentPlaceHolder2_Panel2 > div.panel-heading ,#ContentPlaceHolder2_Panel3 > div.panel-heading,
+#ContentPlaceHolder2_Panel4 > div.panel-heading,#ContentPlaceHolder2_Panel5 > div.panel-heading,#ContentPlaceHolder2_Panel6 > div.panel-heading{
+background-color:#0179ac;
+
+
+}
+#ContentPlaceHolder2_Label9, #ContentPlaceHolder2_Panel2  label, #ContentPlaceHolder2_Panel1  label,
+#ContentPlaceHolder2_Label1,#ContentPlaceHolder2_Label2,#ContentPlaceHolder2_Label3,#ContentPlaceHolder2_Label4,#ContentPlaceHolder2_Label5
+{
+
+padding-top:0px;
+}
+.jumbotron {
+
+    padding: 20px;
+    background-color: #2fa4e7;
+    
+}
+#ContentPlaceHolder2_UpdatePanel2 > div > div > h3 {
+    color:white;
+
+}
+div.col-sm-9 {
+padding-right:0px;
+
+}
+
+#ContentPlaceHolder2_Label8,#ContentPlaceHolder2_Panel4 > div.panel-body.form-horizontal > div span,#ContentPlaceHolder2_Panel5 > div.panel-body.form-horizontal > div span,#ContentPlaceHolder2_Panel6 > div.panel-body.form-horizontal > div span,#ContentPlaceHolder2_Panel7 > div.panel-body.form-horizontal > div span ,
+#ContentPlaceHolder2_Label50,#ContentPlaceHolder2_Label29,#ContentPlaceHolder2_Label65{
+
+padding-top:0px;
+}
+
+.col-sm-9 {
+    border-left: solid 2px lightblue;
+}
+
+
+.col-sm-12 .footer-distributed {
+
+opacity:1;
+height:105px;
+background-color:#191919;
+ margin-top: 10px;
+ padding-top:12px;
+ padding-bottom:12px;
+
+
+}
+.col-sm-12 .footer-distributed:hover {
+
+opacity:1;
+height:105px;
+background-color:#191919;
+ margin-top: 10px;
+  padding-top:12px;
+ padding-bottom:12px;
+}
+
+#ContentPlaceHolder2_UpdatePanel2 > table > tbody > tr > td > div,#ContentPlaceHolder2_UpdatePanel2 > div > table {
+width:920px;
+
+}
+div.footer-left h3 ,#form1 > div:nth-child(11) > div > footer > div.footer-left > h3{
+font-size:20px;
+}
+
+.detailviewnormal {
+min-width:450px;
+max-width:650px;
+}
+.gridview {
+    max-width:650px;
+min-width:450px;
+}
+.gridview2 {
+    max-width:910px;
+min-width:650px;
+}
+#ContentPlaceHolder2_DetailsView1_Image1 {
+height:100px;
+width:100px;
+
+
+}
+
+#ContentPlaceHolder1_Menu1 > ul > li:nth-child(1) {
+    width: 245px;
+}
+#ContentPlaceHolder2_UpdatePanel3 > div > div.panel-body > table > tbody > tr > td > div {
+
+width:910px;
+
+}
+#ContentPlaceHolder2_Button1 {
+margin-left:126px;
+
+}
+
+#ContentPlaceHolder2_UpdatePanel1 > div > div.panel-body > table > tbody > tr > td > div,#ContentPlaceHolder2_UpdatePanel2 > div > div.panel-body > table > tbody > tr > td > div,
+#ContentPlaceHolder2_UpdatePanel4 > div > div.panel-body > table > tbody > tr > td > div,
+#ContentPlaceHolder2_UpdatePanel5 > div > div.panel-body > table > tbody > tr > td > div {
+width:910px;
+
+}
+#ContentPlaceHolder2_Button2 {
+    margin-left: 230px;
+}
+
+#ContentPlaceHolder2_DetailsView1_RadioButtonList4_1,#ContentPlaceHolder2_DetailsView1_RadioButtonList4 > tbody > tr > td:nth-child(2) > label {
+margin-left:50px;
+}
+.gridview > tbody > tr:nth-child(1) > th ,#ContentPlaceHolder2_GridView9 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView12 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView13 > tbody > tr:nth-child(1) > th{
+text-align:center;
+
+}
+.gridview3 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView5 > tbody > tr:nth-child(1) > th:nth-child(2),#ContentPlaceHolder2_GridView7 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView4_GridView5_0 > tbody > tr:nth-child(1) > th,
+#ContentPlaceHolder2_GridView6 > tbody > tr:nth-child(1) > th,#ContentPlaceHolder2_GridView11 > tbody > tr:nth-child(1) > th{
+text-align:center;
+
+}
+
+#ContentPlaceHolder2_GridView4_GridView5_0 > tbody > tr:nth-child(1) > th
+
+.gridview3 {
+width:800px;
+
+}
+.gridview5 {
+width:600px;
+
+}
+.gridviewsmall {
+
+        width: 300px;
+
+    margin-left: 40px;
+}
+.gridviewsmall2 {
+
+        width: 300px;
+
+ 
+}
+
+.gridview8{
+    margin-left:50px;
+
+}
+.chartsmall {
+
+    width: 400px;
+    margin-left: 70px;
+}
+.profile {
+width:400px;
+margin-left:250px;
+
+}
+.padding40{
+padding-left:40px;
+
+}
+
+.chart4margin110 {
+
+margin-left:100px
+}
+
+.chart3padding {
+margin-left:120px;
+
+}
+
+.paddingleft0 {
+
+padding-left:0px;
+}
+.marginleft0 {
+margin-left:0px;
+}
+
+.gridview7 > tbody > tr {
+text-align:left;
+
+}
+.margin110 {
+margin-left:110px;
+max-width:350px;
+
+}
+
+#ContentPlaceHolder2_DetailsView2_Image2 {
+
+margin-left:0px;
+}
+
+
+#form1 > div:nth-child(12) > div > footer > div.footer-right > div {
+margin-top:0px;
+
+}
+#form1 > div:nth-child(11) > div > footer > div.footer-right > div {
+
+margin-top:6px;
+}
+
+
+#form1 > div:nth-child(11) > div > footer {
+
+    height: 80px;
+    margin-bottom: 8px;
+}
+
+#form1 > div:nth-child(11) > .row > div {
+    padding-left:0px;
+    padding-right:0px;
+
+}
+
+
+.divscroll {    
+    min-height: 460px;
+    max-height:543px;
+  
+    overflow: auto;
+}
+
+.margin0 {
+
+margin-left:0px;
+}

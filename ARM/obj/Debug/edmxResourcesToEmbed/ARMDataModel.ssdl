@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ARMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="accountNumber" />
+    </Key>
+    <Property Name="accountNumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="40" />
+    <Property Name="category" Type="nvarchar" MaxLength="20" />
+    <Property Name="VATRegNo" Type="nvarchar" MaxLength="40" />
+    <Property Name="lastReading" Type="int" />
+    <Property Name="currentMonthReading" Type="int" />
+  </EntityType>
+  <EntityType Name="Charges">
+    <Key>
+      <PropertyRef Name="noOfUnits" />
+    </Key>
+    <Property Name="noOfUnits" Type="int" Nullable="false" />
+    <Property Name="commercialCatPRice" Type="float" />
+    <Property Name="domesticCatPrice" Type="float" />
+  </EntityType>
+  <EntityType Name="ConsumptionCharges">
+    <Key>
+      <PropertyRef Name="accountNumber" />
+      <PropertyRef Name="year" />
+      <PropertyRef Name="month" />
+    </Key>
+    <Property Name="accountNumber" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="year" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="month" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="date" Type="date" />
+    <Property Name="amount" Type="float" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="60" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" />
+    <Property Name="homeTel" Type="nvarchar" MaxLength="12" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="12" />
+    <Property Name="NIC" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="128" />
+    <Property Name="email" Type="nvarchar" MaxLength="60" />
+    <Property Name="tarrifCategory" Type="nvarchar" MaxLength="20" />
+    <Property Name="region" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="paymentID" />
+    </Key>
+    <Property Name="paymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="accountNumber" Type="nvarchar" MaxLength="30" />
+    <Property Name="amount" Type="float" />
+    <Property Name="date" Type="date" />
+    <Property Name="bank" Type="nvarchar" MaxLength="60" />
+    <Property Name="creditCardNo" Type="nvarchar" MaxLength="40" />
+    <Property Name="expiryDate" Type="date" />
+    <Property Name="code" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="staffMember">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="60" />
+    <Property Name="address" Type="nvarchar" MaxLength="200" />
+    <Property Name="homeTel" Type="nvarchar" MaxLength="12" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="12" />
+    <Property Name="NIC" Type="nvarchar" MaxLength="20" />
+    <Property Name="password" Type="nvarchar" MaxLength="128" />
+    <Property Name="email" Type="nvarchar" MaxLength="60" />
+    <Property Name="designation" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Account__userNam__0DAF0CB0">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consumpti__accou__21B6055D">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ConsumptionCharges" Type="Self.ConsumptionCharges" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="accountNumber" />
+      </Principal>
+      <Dependent Role="ConsumptionCharges">
+        <PropertyRef Name="accountNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__account__267ABA7A">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="accountNumber" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="accountNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="addition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="addition2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="addition3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="ARMModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Charges" EntityType="Self.Charges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConsumptionCharges" EntityType="Self.ConsumptionCharges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staffMember" EntityType="Self.staffMember" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__userNam__0DAF0CB0" Association="Self.FK__Account__userNam__0DAF0CB0">
+      <End Role="customer" EntitySet="customer" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consumpti__accou__21B6055D" Association="Self.FK__Consumpti__accou__21B6055D">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="ConsumptionCharges" EntitySet="ConsumptionCharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__account__267ABA7A" Association="Self.FK__Payment__account__267ABA7A">
+      <End Role="Account" EntitySet="Account" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

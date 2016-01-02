@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ARMModelStoreContainer" CdmEntityContainer="ARMEntities">
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="ARMModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="VATRegNo" ColumnName="VATRegNo" />
+          <ScalarProperty Name="lastReading" ColumnName="lastReading" />
+          <ScalarProperty Name="currentMonthReading" ColumnName="currentMonthReading" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Charges">
+      <EntityTypeMapping TypeName="ARMModel.Charge">
+        <MappingFragment StoreEntitySet="Charges">
+          <ScalarProperty Name="noOfUnits" ColumnName="noOfUnits" />
+          <ScalarProperty Name="commercialCatPRice" ColumnName="commercialCatPRice" />
+          <ScalarProperty Name="domesticCatPrice" ColumnName="domesticCatPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsumptionCharges">
+      <EntityTypeMapping TypeName="ARMModel.ConsumptionCharge">
+        <MappingFragment StoreEntitySet="ConsumptionCharges">
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="ARMModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="homeTel" ColumnName="homeTel" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tarrifCategory" ColumnName="tarrifCategory" />
+          <ScalarProperty Name="region" ColumnName="region" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Payments">
+      <EntityTypeMapping TypeName="ARMModel.Payment">
+        <MappingFragment StoreEntitySet="Payment">
+          <ScalarProperty Name="paymentID" ColumnName="paymentID" />
+          <ScalarProperty Name="accountNumber" ColumnName="accountNumber" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="bank" ColumnName="bank" />
+          <ScalarProperty Name="creditCardNo" ColumnName="creditCardNo" />
+          <ScalarProperty Name="expiryDate" ColumnName="expiryDate" />
+          <ScalarProperty Name="code" ColumnName="code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staffMembers">
+      <EntityTypeMapping TypeName="ARMModel.staffMember">
+        <MappingFragment StoreEntitySet="staffMember">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="homeTel" ColumnName="homeTel" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="NIC" ColumnName="NIC" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="addition" FunctionName="ARMModel.Store.addition" />
+    <FunctionImportMapping FunctionImportName="addition2" FunctionName="ARMModel.Store.addition2" />
+    <FunctionImportMapping FunctionImportName="addition3" FunctionName="ARMModel.Store.addition3" />
+  </EntityContainerMapping>
+</Mapping>

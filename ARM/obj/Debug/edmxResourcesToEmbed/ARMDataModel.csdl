@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ARMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="accountNumber" />
+    </Key>
+    <Property Name="accountNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="category" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VATRegNo" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="lastReading" Type="Int32" />
+    <Property Name="currentMonthReading" Type="Int32" />
+    <NavigationProperty Name="customer" Relationship="Self.FK__Account__userNam__0DAF0CB0" FromRole="Account" ToRole="customer" />
+    <NavigationProperty Name="ConsumptionCharges" Relationship="Self.FK__Consumpti__accou__21B6055D" FromRole="Account" ToRole="ConsumptionCharges" />
+    <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__account__267ABA7A" FromRole="Account" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Charge">
+    <Key>
+      <PropertyRef Name="noOfUnits" />
+    </Key>
+    <Property Name="noOfUnits" Type="Int32" Nullable="false" />
+    <Property Name="commercialCatPRice" Type="Double" />
+    <Property Name="domesticCatPrice" Type="Double" />
+  </EntityType>
+  <EntityType Name="ConsumptionCharge">
+    <Key>
+      <PropertyRef Name="accountNumber" />
+      <PropertyRef Name="year" />
+      <PropertyRef Name="month" />
+    </Key>
+    <Property Name="accountNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="year" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="month" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="amount" Type="Double" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Consumpti__accou__21B6055D" FromRole="ConsumptionCharges" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="homeTel" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="NIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="tarrifCategory" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="region" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Accounts" Relationship="Self.FK__Account__userNam__0DAF0CB0" FromRole="customer" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="paymentID" />
+    </Key>
+    <Property Name="paymentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="accountNumber" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="amount" Type="Double" />
+    <Property Name="date" Type="DateTime" Precision="0" />
+    <Property Name="bank" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="creditCardNo" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="expiryDate" Type="DateTime" Precision="0" />
+    <Property Name="code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Account" Relationship="Self.FK__Payment__account__267ABA7A" FromRole="Payment" ToRole="Account" />
+  </EntityType>
+  <EntityType Name="staffMember">
+    <Key>
+      <PropertyRef Name="userName" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="homeTel" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="NIC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Account__userNam__0DAF0CB0">
+    <End Role="customer" Type="Self.customer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customer">
+        <PropertyRef Name="userName" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="userName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Consumpti__accou__21B6055D">
+    <End Role="Account" Type="Self.Account" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ConsumptionCharges" Type="Self.ConsumptionCharge" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="accountNumber" />
+      </Principal>
+      <Dependent Role="ConsumptionCharges">
+        <PropertyRef Name="accountNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__account__267ABA7A">
+    <End Role="Account" Type="Self.Account" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Account">
+        <PropertyRef Name="accountNumber" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="accountNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ARMEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Charges" EntityType="Self.Charge" />
+    <EntitySet Name="ConsumptionCharges" EntityType="Self.ConsumptionCharge" />
+    <EntitySet Name="customers" EntityType="Self.customer" />
+    <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="staffMembers" EntityType="Self.staffMember" />
+    <AssociationSet Name="FK__Account__userNam__0DAF0CB0" Association="Self.FK__Account__userNam__0DAF0CB0">
+      <End Role="customer" EntitySet="customers" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Consumpti__accou__21B6055D" Association="Self.FK__Consumpti__accou__21B6055D">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="ConsumptionCharges" EntitySet="ConsumptionCharges" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__account__267ABA7A" Association="Self.FK__Payment__account__267ABA7A">
+      <End Role="Account" EntitySet="Accounts" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <FunctionImport Name="addition" />
+    <FunctionImport Name="addition2" />
+    <FunctionImport Name="addition3" />
+  </EntityContainer>
+</Schema>
